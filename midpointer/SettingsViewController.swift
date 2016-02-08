@@ -17,10 +17,7 @@ class SettingsViewController: UIViewController {
 
     var brush: CGFloat = 10.0
     var opacity: CGFloat = 1.0
-    var red: CGFloat = 0.0
-    var green: CGFloat = 0.0
-    var blue: CGFloat = 0.0
-    
+
     weak var delegate: SettingsViewControllerDelegate?
     
     override func viewDidLoad() {
@@ -46,7 +43,6 @@ class SettingsViewController: UIViewController {
         CGContextSetLineCap(context, CGLineCap.Round)
         CGContextSetLineWidth(context, brush)
         
-        CGContextSetRGBStrokeColor(context, red, green, blue, 1.0)
         CGContextMoveToPoint(context, 45.0, 45.0)
         CGContextAddLineToPoint(context, 45.0, 45.0)
         CGContextStrokePath(context)
@@ -61,7 +57,7 @@ class SettingsViewController: UIViewController {
         CGContextMoveToPoint(context, 45.0, 45.0)
         CGContextAddLineToPoint(context, 45.0, 45.0)
         
-        CGContextSetRGBStrokeColor(context, red, green, blue, opacity)
+        CGContextSetRGBStrokeColor(context, 0, 0, 0, opacity)
         CGContextStrokePath(context)
         imageViewOpacity.image = UIGraphicsGetImageFromCurrentImageContext()
         
