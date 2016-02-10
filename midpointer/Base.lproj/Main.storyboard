@@ -14,13 +14,11 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VdO-SK-Y4k" userLabel="MainImageView">
+                            <imageView id="mainImageView-id" userLabel="MainImageView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AyQ-rv-3rx" userLabel="TempImageView">
+                            <imageView id="tempImageView-id" userLabel="TempImageView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                         </subviews>
@@ -28,38 +26,13 @@
                         <constraints></constraints>
                     </view>
                     <connections>
-                        <outlet property="mainImageView" destination="VdO-SK-Y4k" id="TIY-mP-Myh"/>
-                        <outlet property="tempImageView" destination="AyQ-rv-3rx" id="Hd8-8f-jAc"/>
+                        <outlet property="mainImageView" destination="mainImageView-id" id="TIY-mP-Myh"/>
+                        <outlet property="tempImageView" destination="tempImageView-id" id="Hd8-8f-jAc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="380" y="479"/>
-        </scene>
-        <!--Settings View Controller-->
-        <scene sceneID="cln-Fy-DWi">
-            <objects>
-                <viewController id="LFy-TC-tvP" customClass="SettingsViewController" customModule="DrawPad" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="JNF-GL-rQA"/>
-                        <viewControllerLayoutGuide type="bottom" id="VLo-8p-h5c"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="3bm-Do-1fP">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews></subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints></constraints>
-                        <variation key="default"> </variation>
-                    </view>
-                    <connections>
-                        <outlet property="imageViewBrush" destination="wG5-NG-XdT" id="ypI-Ni-nvq"/>
-                        <outlet property="imageViewOpacity" destination="wf6-BX-6vq" id="PAm-Yc-LhH"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mxX-qa-ZQ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1060" y="479"/>
         </scene>
     </scenes>
     <resources> </resources>
