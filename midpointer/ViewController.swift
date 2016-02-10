@@ -102,19 +102,4 @@ class ViewController: UIViewController {
         
         tempImageView.image = nil
     }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let settingsViewController = segue.destinationViewController as! SettingsViewController
-        settingsViewController.delegate = self
-        settingsViewController.brush = brushWidth
-        settingsViewController.opacity = opacity
-    }
 }
-
-extension ViewController: SettingsViewControllerDelegate {
-    func settingsViewControllerFinished(settingsViewController: SettingsViewController) {
-        self.brushWidth = settingsViewController.brush
-        self.opacity = settingsViewController.opacity
-    }
-}
-
