@@ -46,20 +46,6 @@ class SettingsViewController: UIViewController {
         CGContextStrokePath(context)
         imageViewBrush.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        
-        UIGraphicsBeginImageContext(imageViewBrush.frame.size)
-        context = UIGraphicsGetCurrentContext()
-        
-        CGContextSetLineCap(context, CGLineCap.Round)
-        CGContextSetLineWidth(context, 20)
-        CGContextMoveToPoint(context, 45.0, 45.0)
-        CGContextAddLineToPoint(context, 45.0, 45.0)
-        
-        CGContextSetRGBStrokeColor(context, 0, 0, 0, opacity)
-        CGContextStrokePath(context)
-        imageViewOpacity.image = UIGraphicsGetImageFromCurrentImageContext()
-        
-        UIGraphicsEndImageContext()
     }
     
     override func viewWillAppear(animated: Bool) {
