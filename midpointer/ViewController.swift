@@ -1,7 +1,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var tempImageView: UIImageView!
     
@@ -60,25 +59,20 @@ class ViewController: UIViewController {
     
     func drawLineFrom(fromPoint: CGPoint, toPoint: CGPoint) {
         
-        // 1
         UIGraphicsBeginImageContext(view.frame.size)
         let context = UIGraphicsGetCurrentContext()
         tempImageView.image?.drawInRect(CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
         
-        // 2
         CGContextMoveToPoint(context, fromPoint.x, fromPoint.y)
         CGContextAddLineToPoint(context, toPoint.x, toPoint.y)
         
-        // 3
         CGContextSetLineCap(context, CGLineCap.Round)
         CGContextSetLineWidth(context, brushWidth)
         CGContextSetRGBStrokeColor(context, 0, 0, 0, 1.0)
         CGContextSetBlendMode(context, CGBlendMode.Normal)
         
-        // 4
         CGContextStrokePath(context)
         
-        // 5
         tempImageView.image = UIGraphicsGetImageFromCurrentImageContext()
         tempImageView.alpha = opacity
         UIGraphicsEndImageContext()
@@ -86,19 +80,16 @@ class ViewController: UIViewController {
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        // 6
         swiped = true
         if let touch = touches.first! as UITouch? {
             let currentPoint = touch.locationInView(view)
             drawLineFrom(lastPoint, toPoint: currentPoint)
             
-            // 7
             lastPoint = currentPoint
         }
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        
         if !swiped {
             // draw a single point
             drawLineFrom(lastPoint, toPoint: lastPoint)
@@ -120,7 +111,6 @@ class ViewController: UIViewController {
         settingsViewController.brush = brushWidth
         settingsViewController.opacity = opacity
     }
-    
 }
 
 extension ViewController: SettingsViewControllerDelegate {
