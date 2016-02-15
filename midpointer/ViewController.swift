@@ -5,7 +5,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var tempImageView: UIImageView!
     
     var lastPoint = CGPoint.zero
-    var brushWidth: CGFloat = 10.0
+    var brushWidth: CGFloat = 2.0
     var opacity: CGFloat = 1.0
     var swiped = false
     
@@ -29,21 +29,6 @@ class ViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-
-    @IBAction func reset(sender: AnyObject) {
-        mainImageView.image = nil
-    }
-    
-    @IBAction func share(sender: AnyObject) {
-        UIGraphicsBeginImageContext(mainImageView.bounds.size)
-        mainImageView.image?.drawInRect(CGRect(x: 0, y: 0,
-            width: mainImageView.frame.size.width, height: mainImageView.frame.size.height))
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        let activity = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-        presentViewController(activity, animated: true, completion: nil)
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
