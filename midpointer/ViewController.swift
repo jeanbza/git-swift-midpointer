@@ -8,6 +8,8 @@ class ViewController: UIViewController {
     var brushWidth: CGFloat = 2.0
     var opacity: CGFloat = 1.0
     var swiped = false
+
+    var foo = [CGFloat]()
     
     let colors: [(CGFloat, CGFloat, CGFloat)] = [
         (0, 0, 0),
@@ -30,7 +32,7 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         swiped = false
         if let touch = touches.first! as UITouch? {
@@ -45,6 +47,11 @@ class ViewController: UIViewController {
         
         CGContextMoveToPoint(context, fromPoint.x, fromPoint.y)
         CGContextAddLineToPoint(context, toPoint.x, toPoint.y)
+
+        let bar = [toPoint.x, toPoint.y]
+        print(bar)
+        foo += bar
+        print(foo)
         
         CGContextSetLineCap(context, CGLineCap.Round)
         CGContextSetLineWidth(context, brushWidth)
