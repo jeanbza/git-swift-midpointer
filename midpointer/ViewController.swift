@@ -9,8 +9,8 @@ class ViewController: UIViewController {
     var opacity: CGFloat = 1.0
     var swiped = false
 
-    var foo = [CGFloat]()
-    
+    var lineCoordinates: Array<Array<CGFloat>> = []
+
     let colors: [(CGFloat, CGFloat, CGFloat)] = [
         (0, 0, 0),
         (105.0 / 255.0, 105.0 / 255.0, 105.0 / 255.0),
@@ -48,11 +48,10 @@ class ViewController: UIViewController {
         CGContextMoveToPoint(context, fromPoint.x, fromPoint.y)
         CGContextAddLineToPoint(context, toPoint.x, toPoint.y)
 
-        let bar = [toPoint.x, toPoint.y]
-        print(bar)
-        foo += bar
-        print(foo)
-        
+        let coordinate: Array<CGFloat> = [toPoint.x, toPoint.y]
+        lineCoordinates.append(coordinate)
+        print(lineCoordinates)
+
         CGContextSetLineCap(context, CGLineCap.Round)
         CGContextSetLineWidth(context, brushWidth)
         CGContextSetRGBStrokeColor(context, 0, 0, 0, 1.0)
@@ -88,5 +87,6 @@ class ViewController: UIViewController {
         UIGraphicsEndImageContext()
         
         tempImageView.image = nil
+        lineCoordinates = []
     }
 }
