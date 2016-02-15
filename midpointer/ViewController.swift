@@ -50,7 +50,6 @@ class ViewController: UIViewController {
 
         let coordinate: Array<CGFloat> = [toPoint.x, toPoint.y]
         lineCoordinates.append(coordinate)
-        print(lineCoordinates)
 
         CGContextSetLineCap(context, CGLineCap.Round)
         CGContextSetLineWidth(context, brushWidth)
@@ -93,8 +92,6 @@ class ViewController: UIViewController {
     }
 
     func drawMidpoint() {
-        print("Drawing")
-
         var totalX: CGFloat = 0
         var totalY: CGFloat = 0
 
@@ -107,8 +104,6 @@ class ViewController: UIViewController {
         let midpointY = totalY / CGFloat(lineCoordinates.count)
 
         drawCircle(midpointX, y: midpointY)
-
-        print("Done")
     }
 
     func drawCircle(x: CGFloat, y: CGFloat) {
