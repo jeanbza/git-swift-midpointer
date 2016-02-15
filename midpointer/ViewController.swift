@@ -112,35 +112,16 @@ class ViewController: UIViewController {
     }
 
     func drawCircle(x: CGFloat, y: CGFloat) {
-        let circlePath = UIBezierPath(arcCenter: CGPoint(x: x, y: y), radius: CGFloat(20), startAngle: CGFloat(0), endAngle: CGFloat(M_PI * 2), clockwise: true)
+        let circlePath = UIBezierPath(arcCenter: CGPoint(x: x, y: y), radius: CGFloat(5), startAngle: CGFloat(0), endAngle: CGFloat(M_PI * 2), clockwise: true)
 
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = circlePath.CGPath
 
-        //change the fill color
-        shapeLayer.fillColor = UIColor.clearColor().CGColor
-        //you can change the stroke color
+        shapeLayer.fillColor = UIColor.redColor().CGColor
         shapeLayer.strokeColor = UIColor.redColor().CGColor
-        //you can change the line width
         shapeLayer.lineWidth = 3.0
 
         mainImageView.layer.sublayers = nil
         mainImageView.layer.addSublayer(shapeLayer)
-
-//        UIGraphicsBeginImageContext(view.frame.size)
-//        let context = UIGraphicsGetCurrentContext()
-//
-//        let startAngle = -(M_PI / 2) // 90 degrees
-//        let endAngle = ((2 * M_PI) + startAngle)
-//
-//        CGContextSetLineCap(context, CGLineCap.Round)
-//        CGContextSetLineWidth(context, 5)
-//        CGContextSetRGBStrokeColor(context, 0, 0, 0, 1.0)
-//        CGContextSetBlendMode(context, CGBlendMode.Normal)
-//        CGContextMoveToPoint(context, midpointX, midpointY)
-////        CGContextAddArc(context, midpointX, midpointY, 20, CGFloat(startAngle), CGFloat(endAngle), 0)
-//        mainImageView.image?.drawAtPoint(CGPoint(x: midpointX, y: midpointY))
-//
-//        UIGraphicsEndImageContext()
     }
 }
